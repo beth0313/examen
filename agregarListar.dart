@@ -56,6 +56,9 @@ void listarEstudiantes(List<Map<String, dynamic>> estudiantes) {
     print("\nÍndice: $i");
     print("Nombre: ${e["nombre"]}");
     print("Edad: ${e["edad"]}");
+    print("Nota 1: ${e["nota1"]}");
+    print("Nota 2: ${e["nota2"]}");
+    print("Nota 3: ${e["nota3"]}");
     print("Promedio: ${e["promedio"].toStringAsFixed(2)}");
   }
 }
