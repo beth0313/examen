@@ -11,12 +11,27 @@ void main() {
     stdout.write('Opción: ');
     String? op = stdin.readLineSync();
 
-    switch (op) {
-      case '1': agregarEstudiante(estudiantes); break;
-      case '2': /* llamar a listar */ break;
-      // ... resto de casos
-      case '6': salir = true; break;
-      default: print('Opción inválida');
+    switch (opcion) {
+      case "1":
+        agregarEstudiante(estudiantes);
+        break;
+      case "2":
+        listarEstudiantes(estudiantes);
+        break;
+      case "3":
+        actualizarEstudiante(estudiantes);
+        break;
+      case "4":
+        eliminarEstudiante(estudiantes);
+        break;
+      case "5":
+        calcularPromedioGeneral(estudiantes);
+        break;
+      case "6":
+        print("Saliendo del programa...");
+        return;
+      default:
+        print("Opción inválida.");
     }
   }
 }
