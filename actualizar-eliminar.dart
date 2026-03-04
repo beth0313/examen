@@ -1,4 +1,5 @@
 import 'dart:io';
+
 void eliminarEstudiante(List<Map<String, dynamic>> estudiantes) {
   stdout.write("Índice a eliminar: ");
   int? indice = int.tryParse(stdin.readLineSync() ?? "");
@@ -37,4 +38,14 @@ void actualizarEstudiante(List<Map<String, dynamic>> estudiantes) {
       (estudiante["nota1"] + estudiante["nota2"] + estudiante["nota3"]) / 3;
 
   print("Estudiante actualizado.");
+}
+
+void actualizarNota(Map<String, dynamic> estudiante, String s) {
+  stdout.write("Nueva $s: ");
+  double? nota = double.tryParse(stdin.readLineSync() ?? "");
+  if (nota != null && nota >= 0 && nota <= 10) {
+    estudiante[s] = nota;
+  } else {
+    print("Nota inválida.");
+  }
 }

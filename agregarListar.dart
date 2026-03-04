@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void agregarEstudiante(List<Map<String, dynamic>> estudiantes) {
   stdout.write("Nombre: ");
   String? nombre = stdin.readLineSync();
@@ -31,6 +33,16 @@ void agregarEstudiante(List<Map<String, dynamic>> estudiantes) {
   });
 
   print("Estudiante agregado.");
+}
+
+double? leerNota(String mensaje) {
+  stdout.write(mensaje);
+  double? nota = double.tryParse(stdin.readLineSync() ?? "");
+  if (nota == null || nota < 0 || nota > 10) {
+    print("Nota inválida.");
+    return null;
+  }
+  return nota;
 }
 
 void listarEstudiantes(List<Map<String, dynamic>> estudiantes) {
